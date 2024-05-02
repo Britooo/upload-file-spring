@@ -56,7 +56,7 @@ public class FileController {
         final String contentTypeValue = "attachment; filename=" + file.getName();
 
         return ResponseEntity.status(200)
-                .header(HttpHeaders.CONTENT_TYPE, contentTypeValue)
+                .header(HttpHeaders.CONTENT_DISPOSITION, contentTypeValue)
                 .header(HttpHeaders.CONTENT_TYPE, file.getContentType())
                 .header(HttpHeaders.CONTENT_LENGTH, String.valueOf(file.getSize()))
                 .body(file.getContent());
